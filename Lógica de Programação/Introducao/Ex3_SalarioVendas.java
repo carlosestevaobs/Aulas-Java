@@ -1,5 +1,5 @@
-import java.util.Scanner;
-public class Ex3_SalarioVendas {
+﻿import java.util.Scanner;
+public class ex3_SalarioVendas {
     public static void main(String[] args) {
         Scanner tcl = new Scanner(System.in);
         System.out.println("Digite o nome");

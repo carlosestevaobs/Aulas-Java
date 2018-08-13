@@ -1,5 +1,5 @@
-import java.util.Scanner; 
-public class Media4Notas {
+﻿import java.util.Scanner; 
+public class ex1_Media4Notas {
     public static void main(String[] args) {
         Scanner tcl = new Scanner(System.in);
         double prova1, prova2, prova3, prova4, media;

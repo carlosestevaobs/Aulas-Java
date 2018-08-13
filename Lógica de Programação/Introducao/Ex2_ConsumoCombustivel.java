@@ -1,5 +1,5 @@
-import java.util.Scanner;
-public class ConsumoCombustivel {
+﻿import java.util.Scanner;
+public class ex2_ConsumoCombustivel {
     public static void main(String[] args) {
         Scanner tcl = new Scanner(System.in);
         double distanciaTotalKM, consumoLitros;
