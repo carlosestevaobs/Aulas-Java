@@ -1,28 +1,39 @@
-﻿import java.util.Scanner;
+
+/**
+ *
+ * @author Carlos Estevao
+ *
+ * Algoritmos baseados no livro Algoritmos - Teoria e Prática - Cormen et al
+ * Complexidade no pior caso = O(n^2)
+ */
+import java.util.Arrays;
+import java.util.Random;
 
 public class BubbleSort {
+
     public static void main(String[] args) {
-        Scanner tcl = new Scanner(System.in);
-        int aux = 0;
-        int vetor[] = new int[5];
-        // Recebendo os dados do usuário
+        Random numero = new Random();
+        int vetor[] = new int[10];
         for (int i = 0; i < vetor.length; i++) {
-            vetor[i] = tcl.nextInt();
+            vetor[i] = numero.nextInt(101);
         }
-        // Fazendo a ordenação em ordem crescente
-        for (int i = 0; i <= vetor.length-1; i++) {
-            for (int j = 0; j <= vetor.length-2; j++) {
-                if (vetor[j] > vetor[j+1]) {
+        // Escrevendo os dados do vetor desordenado
+        System.out.println(Arrays.toString(vetor));
+
+        System.out.println("");
+        int aux;
+        // Bubble sort
+        for (int i = 0; i < vetor.length; i++) {
+            for (int j = vetor.length - 1; j >= i + 1; j--) {
+                if (vetor[j] < vetor[j - 1]) {
                     aux = vetor[j];
-                    vetor[j] = vetor[j+1];
-                    vetor[j+1] = aux;
+                    vetor[j] = vetor[j - 1];
+                    vetor[j - 1] = aux;
                 }
             }
         }
-        // Mostrando os dados
-        for (int i = 0; i < vetor.length; i++) {
-            System.out.print(vetor[i]+ " \t");
-        }
-    }
 
+        // Escrevendo os dados do vetor ordenado
+        System.out.println(Arrays.toString(vetor));
+    }
 }

@@ -1,26 +1,40 @@
-import java.util.Scanner;
+
+/**
+ *
+ * @author Carlos Estevao
+ *
+ * Algoritmos baseados no livro Algoritmos - Teoria e Prática - Cormen et al
+ * Complexidade no pior caso = O(n^2)
+ */
+
+import java.util.Arrays;
+import java.util.Random;
 
 public class InsertionSort {
 
     public static void main(String[] args) {
-        Scanner tcl = new Scanner(System.in);
-        int vetor[] = new int[5];       
-        System.out.println("Digite os valores do vetor");
-        
+        Random numero = new Random();
+        int vetor[] = new int[10];
         for (int i = 0; i < vetor.length; i++) {
-            vetor[i] = tcl.nextInt();
+            vetor[i] = numero.nextInt(101);
         }
+        // Escrevendo os dados do vetor desordenado
+        System.out.println(Arrays.toString(vetor));
 
-        for (int i = 0; i < vetor.length; i++) {
-            int a = vetor[i];
-            for (int j = i - 1; j >= 0 && vetor[j] > a; j--) {
-                vetor[j + 1] = vetor[j];
-                vetor[j] = a;
+        System.out.println("");
+        int chave, i;
+        // Insertion Sort
+        for (int j = 1; j < vetor.length; j++) {
+            chave = vetor[j];
+            //Inserir vetor[i] na sequência ordenada vetor[1.. i - 1]
+            i = j - 1;
+            while (i >= 0 && vetor[i] >= chave) {
+                vetor[i + 1] = vetor[i];
+                i = i - 1;
             }
+            vetor[i + 1] = chave;
         }
-        for (int i = 0; i < vetor.length; i++) {
-            System.out.print(" " + vetor[i]);
-        }
+        // Escrevendo os dados do vetor ordenado
+        System.out.println(Arrays.toString(vetor));
     }
-
 }
